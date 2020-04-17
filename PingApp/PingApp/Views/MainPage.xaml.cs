@@ -1,0 +1,43 @@
+﻿using Plugin.Connectivity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace PingApp.Views
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            result.Text = "";
+            var connectivity = CrossConnectivity.Current;
+            if (!connectivity.IsConnected)
+                    return;
+            
+            var reachable = await connectivity.IsRemoteReachable(address.Text);
+            
+            if(reachable)
+            {
+                result.TextColor = Color.Green;
+                result.Text = "Sucess!";
+            }
+            else
+            {
+                result.TextColor = Color.Red;
+                result.Text = "Can't reach host!";
+            }
+        }
+
+    }
+}
