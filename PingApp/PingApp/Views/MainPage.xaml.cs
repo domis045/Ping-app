@@ -138,5 +138,10 @@ namespace PingApp.Views
             fun.Clear();
             Preferences.Remove("History");
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

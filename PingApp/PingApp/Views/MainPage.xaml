@@ -21,8 +21,8 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
-            <Frame HasShadow="True" Margin="25">
-                    <StackLayout HorizontalOptions="CenterAndExpand">
+            <Frame HasShadow="True" Margin="25" Padding="0">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,30,0,0">
                         <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Enter what to check!" />
                         <StackLayout Orientation="Horizontal">
                             <Entry Completed="Button_Clicked" x:Name="address" HorizontalOptions="StartAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
@@ -35,7 +35,6 @@
                 <Frame HasShadow="True" Margin="25,0,25,0">
                     <StackLayout>
                         <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
-                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check again"/>
                         <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="350">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -49,6 +48,11 @@
                                                     <Label HorizontalOptions="StartAndExpand" Text="{Binding Value}" />
                                                     <Label HorizontalOptions="CenterAndExpand" Text="{Binding When}" />
                                                     <Label FontAttributes="Bold" TextColor="{Binding BG}" HorizontalOptions="EndAndExpand" Text="{Binding Status_text}"/>
+                                                    <!--<Label HorizontalOptions="EndAndExpand" Text="x" Margin="10,0,0,0">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>-->
                                                 </StackLayout>
                                             </StackLayout>
                                         </AbsoluteLayout>
@@ -57,6 +61,7 @@
                             </ListView.ItemTemplate>
                         </ListView>
                         <Button BackgroundColor="{StaticResource Primary}" Clicked="Button_Clicked_1" TextColor="White" Text="Clear history"/>
+                        <Label FontAttributes="Italic" HorizontalOptions="CenterAndExpand" Text="Click on an item to check again"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
