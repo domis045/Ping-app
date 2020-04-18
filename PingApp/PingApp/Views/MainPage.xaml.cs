@@ -25,23 +25,31 @@ namespace PingApp.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            result.Text = "";
-            var connectivity = CrossConnectivity.Current;
-            if (!connectivity.IsConnected)
-                    return;
-            
-            var reachable = await connectivity.IsRemoteReachable(address.Text);
-            
-            if(reachable)
+            if(!string.IsNullOrEmpty(address.Text))
             {
-                result.TextColor = Color.Green;
-                result.Text = "Sucess!";
+                result.Text = "";
+                var connectivity = CrossConnectivity.Current;
+                if (!connectivity.IsConnected)
+                    return;
+
+                var reachable = await connectivity.IsRemoteReachable(address.Text);
+
+                if (reachable)
+                {
+                    result.TextColor = Color.Green;
+                    result.Text = "Sucess!";
+                }
+                else
+                {
+                    result.TextColor = Color.Red;
+                    result.Text = "Can't reach host!";
+                }
             }
             else
             {
-                result.TextColor = Color.Red;
-                result.Text = "Can't reach host!";
+                await DisplayAlert("Warning", "Please enter a proper address!", "Ok");
             }
+            
         }
 
         private void HistoryList_ItemTapped(object sender, ItemTappedEventArgs e)
