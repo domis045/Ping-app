@@ -24,9 +24,10 @@
             <Frame HasShadow="True" Margin="25">
                     <StackLayout HorizontalOptions="CenterAndExpand">
                         <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Enter what to check!" />
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Entry Completed="Button_Clicked" x:Name="address" HorizontalOptions="CenterAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
-                            <Button Clicked="Button_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="Check!"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Completed="Button_Clicked" x:Name="address" HorizontalOptions="StartAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
+                            <Button x:Name="searchBtn" Clicked="Button_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HorizontalOptions="EndAndExpand" Text="Check!"/>
+                            <ActivityIndicator x:Name="ping" IsRunning="True" IsVisible="False" />
                         </StackLayout>
                         <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="result" />
                     </StackLayout>
@@ -45,6 +46,7 @@
                                              Padding="10, 10, 10, 10">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label HorizontalOptions="StartAndExpand" Text="{Binding Value}" />
+                                                    <Label HorizontalOptions="CenterAndExpand" Text="{Binding When}" />
                                                     <Label FontAttributes="Bold" TextColor="{Binding BG}" HorizontalOptions="EndAndExpand" Text="{Binding Status_text}"/>
                                                 </StackLayout>
                                             </StackLayout>

@@ -76,7 +76,7 @@
                             <FormattedString.Spans>
                                 <Span Text="This app can be found in" />
                                 <Span Text=" " />
-                                <Span Text=" Github" FontAttributes="Bold" />
+                                <Span Text="Github" FontAttributes="Bold" />
                                 <Span Text="." />
                             </FormattedString.Spans>
                         </FormattedString>

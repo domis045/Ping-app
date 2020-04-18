@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+
 
 namespace PingApp.Views
 {
@@ -17,6 +19,7 @@ namespace PingApp.Views
         {
             public string Value { get; set; }
             public bool Status { get; set; }
+            public string When { get; set; }
             public string Status_text 
             {
                 get
@@ -43,8 +46,8 @@ namespace PingApp.Views
         {
             InitializeComponent();
             List<History> fun = new List<History>();
-            fun.Add(new History{ Value = "test", Status = false });
-            fun.Add(new History{ Value = "test", Status = true });
+            fun.Add(new History{ Value = "google.c", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = false });
+            fun.Add(new History{ Value = "google.com", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = true });
             HistoryList.ItemsSource = fun;
         }
 
@@ -56,6 +59,9 @@ namespace PingApp.Views
                 var connectivity = CrossConnectivity.Current;
                 if (!connectivity.IsConnected)
                     return;
+
+                searchBtn.IsVisible = false;
+                ping.IsVisible = true;
 
                 var reachable = await connectivity.IsRemoteReachable(address.Text);
 
@@ -69,6 +75,9 @@ namespace PingApp.Views
                     result.TextColor = Color.Red;
                     result.Text = "Can't reach host!";
                 }
+                ping.IsVisible = false;
+                searchBtn.IsVisible = true;
+
             }
             else
             {
