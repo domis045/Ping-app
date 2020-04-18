@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-
+using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace PingApp.Views
 {
@@ -42,14 +43,41 @@ namespace PingApp.Views
                 }
             }
         }
+        
+        public ObservableCollection<History> fun = new ObservableCollection<History>();
+
         public MainPage()
         {
             InitializeComponent();
-            List<History> fun = new List<History>();
-            fun.Add(new History{ Value = "google.c", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = false });
-            fun.Add(new History{ Value = "google.com", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = true });
+
+            var history = GetHistories();
+            if (history != null)
+                fun = history;
+
+            //fun.Add(new History{ Value = "google.c", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = false });
+            //fun.Add(new History{ Value = "google.com", When = DateTime.Now.ToString("MM-dd HH:mm"), Status = true });
             HistoryList.ItemsSource = fun;
+
+
+
+            //Preferences.Set("my_key", "my_value");
+            //var myValue = Preferences.Get("my_key", "default_value");
         }
+
+        public ObservableCollection<History> GetHistories()
+        {
+            if(!Preferences.ContainsKey("History"))
+                return null;
+        
+            ObservableCollection<History> temp = JsonConvert.DeserializeObject<ObservableCollection<History>>(Preferences.Get("History", "null"));
+            return temp;
+        }
+
+        public void setHistories()
+        {
+            Preferences.Set("History", JsonConvert.SerializeObject(fun));
+        }
+
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -69,12 +97,21 @@ namespace PingApp.Views
                 {
                     result.TextColor = Color.Green;
                     result.Text = "Sucess!";
+                    
+                    fun.Add(new History { Value = address.Text, When = DateTime.Now.ToString("MM-dd HH:mm"), Status = true });
+
                 }
                 else
                 {
                     result.TextColor = Color.Red;
                     result.Text = "Can't reach host!";
+                    
+                    fun.Add(new History { Value = address.Text, When = DateTime.Now.ToString("MM-dd HH:mm"), Status = false });
+
                 }
+
+                setHistories();
+
                 ping.IsVisible = false;
                 searchBtn.IsVisible = true;
 
@@ -94,6 +131,12 @@ namespace PingApp.Views
             
             if (e.Item == null) return;
             if (sender is ListView lv) lv.SelectedItem = null;
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            fun.Clear();
+            Preferences.Remove("History");
         }
     }
 }

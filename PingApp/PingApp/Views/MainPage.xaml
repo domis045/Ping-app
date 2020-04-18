@@ -35,7 +35,8 @@
                 <Frame HasShadow="True" Margin="25,0,25,0">
                     <StackLayout>
                         <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
-                        <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="400">
+                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check again"/>
+                        <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="350">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -55,7 +56,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check again"/>
+                        <Button BackgroundColor="{StaticResource Primary}" Clicked="Button_Clicked_1" TextColor="White" Text="Clear history"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>

@@ -57,7 +57,7 @@
     </Shell.MenuItemTemplate>
     
     <MenuItem Text="About" IconImageSource="tab_about.png" Clicked="AboutPage"/>
-    <MenuItem Text="Settings" IconImageSource="tab_about.png" Clicked="MenuItem_Clicked"/>
+    <!--<MenuItem Text="Settings" IconImageSource="tab_about.png" Clicked="MenuItem_Clicked"/>-->
 
     <Tab Title="About" Icon="tab_about.png">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
