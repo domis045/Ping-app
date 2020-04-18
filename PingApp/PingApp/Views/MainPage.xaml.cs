@@ -16,6 +16,11 @@ namespace PingApp.Views
         public MainPage()
         {
             InitializeComponent();
+            HistoryList.ItemsSource =
+            new string[]
+            {
+                "Test"
+            };
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -39,5 +44,14 @@ namespace PingApp.Views
             }
         }
 
+        private void HistoryList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var tempListView = (ListView)sender; 
+            var tempItem = tempListView.SelectedItem;
+            address.Text = tempItem.ToString();
+            
+            if (e.Item == null) return;
+            if (sender is ListView lv) lv.SelectedItem = null;
+        }
     }
 }

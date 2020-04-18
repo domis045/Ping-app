@@ -20,39 +20,25 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+        <StackLayout>
             <Frame HasShadow="True" Margin="25">
-                <StackLayout HorizontalOptions="CenterAndExpand">
-                    <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Enter what to check!" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+                        <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Enter what to check!" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                             <Entry x:Name="address" HorizontalOptions="CenterAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
                             <Button Clicked="Button_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="Check!"/>
                         </StackLayout>
                         <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="result" />
                     </StackLayout>
-            </Frame>
-            <Frame HasShadow="True" Margin="25,0,25,0">
-                <StackLayout>
-                    <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
-                    <ListView HeightRequest="400">
-                        <ListView.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>mono</x:String>
-                                <x:String>monodroid</x:String>
-                                <x:String>monotouch</x:String>
-                                <x:String>monorail</x:String>
-                                <x:String>monodevelop</x:String>
-                                <x:String>monotone</x:String>
-                                <x:String>monopoly</x:String>
-                                <x:String>monomodal</x:String>
-                                <x:String>mononucleosis</x:String>
-                            </x:Array>
-                        </ListView.ItemsSource>
-                    </ListView>
-                    <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check agian"/>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
+                </Frame>
+                <Frame HasShadow="True" Margin="25,0,25,0">
+                    <StackLayout>
+                        <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
+                        <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="400"/>
+                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check agian"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
