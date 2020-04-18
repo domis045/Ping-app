@@ -13,14 +13,39 @@ namespace PingApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        public struct History
+        {
+            public string Value { get; set; }
+            public bool Status { get; set; }
+            public string Status_text 
+            {
+                get
+                {
+                    if (Status)
+                        return "Sucess!";
+                    else
+                        return "Failed!";
+                }
+            }
+            public Color BG 
+            { 
+                get
+                {
+                    if (Status)
+                        return Color.Green;
+                    else
+                        return
+                            Color.Red;
+                }
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
-            HistoryList.ItemsSource =
-            new string[]
-            {
-                "Test"
-            };
+            List<History> fun = new List<History>();
+            fun.Add(new History{ Value = "test", Status = false });
+            fun.Add(new History{ Value = "test", Status = true });
+            HistoryList.ItemsSource = fun;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -55,8 +80,8 @@ namespace PingApp.Views
         private void HistoryList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var tempListView = (ListView)sender; 
-            var tempItem = tempListView.SelectedItem;
-            address.Text = tempItem.ToString();
+            var tempItem = (History)tempListView.SelectedItem;
+            address.Text = tempItem.Value;
             
             if (e.Item == null) return;
             if (sender is ListView lv) lv.SelectedItem = null;

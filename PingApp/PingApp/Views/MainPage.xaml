@@ -25,7 +25,7 @@
                     <StackLayout HorizontalOptions="CenterAndExpand">
                         <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Text="Enter what to check!" />
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Entry x:Name="address" HorizontalOptions="CenterAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
+                            <Entry Completed="Button_Clicked" x:Name="address" HorizontalOptions="CenterAndExpand" Placeholder="IP or website address" HorizontalTextAlignment="Center" />
                             <Button Clicked="Button_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HorizontalOptions="CenterAndExpand" Text="Check!"/>
                         </StackLayout>
                         <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="result" />
@@ -33,9 +33,27 @@
                 </Frame>
                 <Frame HasShadow="True" Margin="25,0,25,0">
                     <StackLayout>
-                        <Label FontSize="Title"  FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
-                        <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="400"/>
-                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check agian"/>
+                        <Label FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center" Text="History" />
+                        <ListView x:Name="HistoryList" ItemTapped="HistoryList_ItemTapped" HeightRequest="400">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <AbsoluteLayout VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="FillAndExpand">
+                                            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                                             AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                             Padding="10, 10, 10, 10">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label HorizontalOptions="StartAndExpand" Text="{Binding Value}" />
+                                                    <Label FontAttributes="Bold" TextColor="{Binding BG}" HorizontalOptions="EndAndExpand" Text="{Binding Status_text}"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </AbsoluteLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Label HorizontalOptions="CenterAndExpand" Text="Click on an item to check again"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
