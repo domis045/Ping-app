@@ -1,5 +1,6 @@
 # ![Ping app](https://github.com/domis045/Ping-app/raw/master/demo/logo-sm.png)
 Ping is an app that checks if a website is up or you can acess it!
+
 See your ping history and much more!
 # Implementation
 ## Views (XAML)
