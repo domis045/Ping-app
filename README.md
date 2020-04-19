@@ -9,12 +9,9 @@ TODO
 TODO
 ````
 # Screenshots
-## Main menu 
-![Main menu](https://github.com/domis045/Ping-app/raw/master/demo/1.jpg)
-## About
-![Side menu](https://github.com/domis045/Ping-app/raw/master/demo/side-menu.jpg)
-## Side menu
-![About menu](https://github.com/domis045/Ping-app/raw/master/demo/about.jpg)
+| **Main menu** | **About** | **Side menu** |
+|---	|---	|---	|
+|<img src="https://github.com/domis045/Ping-app/raw/master/demo/1.jpg" alt="Main menu" width="150" height="300"/>|<img src="https://github.com/domis045/Ping-app/raw/master/demo/side-menu.jpg" alt="Side menu" width="150" height="300"/>|<img src="https://github.com/domis045/Ping-app/raw/master/demo/about.jpg" alt="About" width="150" height="300"/>|
 
 # Platform
 ![Xamarin forms](https://upload.wikimedia.org/wikipedia/commons/6/68/Xamarin_logo_and_wordmark.png)
