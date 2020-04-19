@@ -306,3 +306,7 @@ public class AboutViewModel : BaseViewModel
 
 # <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Xamarin_logo_and_wordmark.png" alt="About" width="300" height="80"/>
 This app is written in Xamarin forms (**``C#``**)  
+
+# License
+License can be found [here.](../master/LICENSE)
+
