@@ -312,6 +312,13 @@ public class AboutViewModel : BaseViewModel
 # <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Xamarin_logo_and_wordmark.png" alt="About" width="300" height="80"/>
 This app is written in Xamarin forms (**``C#``**)  
 
+# Used nugets
+
+<img src="https://api.nuget.org/v3-flatcontainer/newtonsoft.json/12.0.3/icon" alt="Main menu" width="32" height="32"/> [Newtonsoft Json](https://www.nuget.org/packages/Newtonsoft.Json/12.0.3?_src=template)
+
+<img src="https://api.nuget.org/v3-flatcontainer/xam.plugin.connectivity/3.2.0/icon" alt="Main menu" width="32" height="32"/> [Xam Plugin Connectivity](https://www.nuget.org/packages/Xam.Plugin.Connectivity/3.2.0?_src=template)
+
+
 # License
 License can be found [here.](../master/LICENSE)
 
