@@ -9,6 +9,8 @@ Android support ``5.1 - 10``
 
 # Implementation
 ## Views (XAML)
+
+## Viewmodels and XAML classes
 ### [AboutViewModel](../master/PingApp/PingApp/ViewModels/AboutViewModel.cs) (About page)
 ```csharp
 public class AboutViewModel : BaseViewModel
@@ -22,10 +24,6 @@ public class AboutViewModel : BaseViewModel
 
         public ICommand OpenWebCommand { get; }
     }
-````
-## Viewmodels and XAML classes
-```csharp
-TODO
 ````
 # Screenshots
 | **Main menu** | **About** | **Side menu** |
