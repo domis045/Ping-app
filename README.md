@@ -17,4 +17,4 @@ TODO
 |<img src="https://github.com/domis045/Ping-app/raw/master/demo/1.jpg" alt="Main menu" width="150" height="300"/>|<img src="https://github.com/domis045/Ping-app/raw/master/demo/side-menu.jpg" alt="Side menu" width="150" height="300"/>|<img src="https://github.com/domis045/Ping-app/raw/master/demo/about.jpg" alt="About" width="150" height="300"/>|
 
 # <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Xamarin_logo_and_wordmark.png" alt="About" width="300" height="80"/>
-This app is written in xamarin forms (C#)  
+This app is written in xamarin forms (**``C#``**)  
