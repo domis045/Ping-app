@@ -10,9 +10,30 @@ Android support ``5.1 - 10``
 # Implementation
 ## Views (XAML)
 
+
 ## Viewmodels and XAML classes
 
-### [BaseViewModel](../master/PingApp/PingApp/ViewModels/BaseViewModel.cs) (Base viewmodel)
+### [AppShell](../master/PingApp/PingApp/AppShell.xaml.cs) (AppShell)
+````csharp
+ public partial class AppShell : Xamarin.Forms.Shell
+    {
+        public AppShell()
+        {
+            InitializeComponent();
+        }
+
+        private void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Views.SettingsPage());
+        }
+
+        private void AboutPage(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Views.AboutPage());
+        }
+    }
+````
+### [BaseViewModel](../master/PingApp/PingApp/ViewModels/BaseViewModel.cs) (Base View Model)
 ```csharp
     public class BaseViewModel : INotifyPropertyChanged
     {
