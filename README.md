@@ -1,9 +1,13 @@
 # ![Ping app](https://github.com/domis045/Ping-app/raw/master/demo/logo-sm.png)
 # Implementation
 ## Views (XAML)
+```csharp
 TODO
+````
 ## Viewmodels and XAML classes
+```csharp
 TODO
+````
 # Screenshots
 ## Main menu 
 ![Main menu](https://github.com/domis045/Ping-app/raw/master/demo/1.jpg)
