@@ -5,7 +5,12 @@ See your ping history and much more!
 
 <img src="https://img.talkandroid.com/uploads/2020/01/1173px-Android_logo_2019.svg_-1088x950.png" alt="Main menu" width="100" height="100"/>
 
-Android support ``5.1 - 10``
+Android support
+- Minimum Android version: ``Android 5.0 (API Level 21 - Lolilipop)``
+
+- Target android version: ``Android 9.0 (API Level 28 - Pie)`` 
+
+Target framework: ``Android 9.0 (Pie)``
 
 # Implementation
 ## Views (XAML)
