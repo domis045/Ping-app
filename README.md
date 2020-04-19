@@ -9,8 +9,19 @@ Android support ``5.1 - 10``
 
 # Implementation
 ## Views (XAML)
+### [AboutViewModel](../master/PingApp/PingApp/ViewModels/AboutViewModel.cs) (About page)
 ```csharp
-TODO
+public class AboutViewModel : BaseViewModel
+    {
+        public AboutViewModel()
+        {
+            Title = "About";
+
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://github.com/domis045/Ping-app")));
+        }
+
+        public ICommand OpenWebCommand { get; }
+    }
 ````
 ## Viewmodels and XAML classes
 ```csharp
