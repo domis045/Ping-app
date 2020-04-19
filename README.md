@@ -2,6 +2,11 @@
 Ping is an app that checks if a website is up and if you can acess it!
 
 See your ping history and much more!
+
+<img src="https://img.talkandroid.com/uploads/2020/01/1173px-Android_logo_2019.svg_-1088x950.png" alt="Main menu" width="100" height="100"/>
+
+Android support ``5.1 - 10``
+
 # Implementation
 ## Views (XAML)
 ```csharp
